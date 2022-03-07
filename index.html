@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="google-signin-client_id" content="578995760584-v8blghrkhr4p8527vt7kln3r3ii4k09e.apps.googleusercontent.com>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="CSS/Authen.css">
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+</head>
+<body>
+<div class="container">
+  <form action="/action_page.php">
+    <div class="row">
+      <h2 style="text-align:center">Login with Social Media</h2>
+
+      <div style="text-align:center" class="col">
+        <a href="#" class="fb btn">
+          <i class="fa fa-facebook fa-fw"></i> Login with Facebook
+         </a>
+        <a href="#" class="twitter btn">
+          <i class="fa fa-twitter fa-fw"></i> Login with Twitter
+        </a>
+        <a href="#" data-onsuccess="onSignIn" class="google btn"><i class="fa fa-google fa-fw">
+          </i> Login with Google+
+        </a>
+      </div>
+    </div>
+  </form>
+</div>
+</body>
+</html>
