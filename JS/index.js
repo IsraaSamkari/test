@@ -1,4 +1,4 @@
-import "https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js";
+import {firebase} from "https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js";
 import "https://www.gstatic.com/firebasejs/9.0.0/firebase-auth.js";
 
 // TODO: Add SDKs for Firebase products that you want to use
