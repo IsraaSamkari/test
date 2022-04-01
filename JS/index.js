@@ -1,10 +1,10 @@
-import {firebase} from "https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js";
-import "https://www.gstatic.com/firebasejs/9.0.0/firebase-auth.js";
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js";
+import { getAuth } "https://www.gstatic.com/firebasejs/9.0.0/firebase-auth.js";
 
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
-const firebaseConfig = {
+const app = initializeApp({
   apiKey: "AIzaSyCPFmtE5l8DczGw0jIMZrpRN9QJLTAo_ik",
   authDomain: "csarabwebdictionary.firebaseapp.com",
   projectId: "csarabwebdictionary",
@@ -12,10 +12,13 @@ const firebaseConfig = {
   messagingSenderId: "905515642923",
   appId: "1:905515642923:web:9253159ffb81f6b5587a6e",
   measurementId: "G-YLPTXT2T81"
-};
+});
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
 
 // Initialize Firebase Authentication and get a reference to the service
-const auth = firebase.auth();
+const auth = getAuth(app);
 
 
 var email="aaa@hotmail.com";
@@ -33,3 +36,4 @@ firebase.auth().signInWithEmailAndPassword(email, password)
 	console.log(errorCode);
     console.log(errorMessage);
   });
+
