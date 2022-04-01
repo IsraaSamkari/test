@@ -1,4 +1,4 @@
-import {moduleSignIn} from "./JS/index.js"
+import {moduleSignIn} from "/JS/index.js"
 
 function signIn() {
    moduleSignIn();
