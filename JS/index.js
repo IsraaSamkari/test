@@ -1,6 +1,5 @@
-import { initializeApp } from 'firebase/app';
-import { getAnalytics } from 'firebase/analytics';
-import {getAuth, onAuthStateChanged} from 'firebase/auth';
+import firebase from "firebase/app";
+import "firebase/auth";
 
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -15,15 +14,22 @@ const firebaseConfig = {
   measurementId: "G-YLPTXT2T81"
 };
 
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
-const auth = getAuth(firebaseConfig);
+// Initialize Firebase Authentication and get a reference to the service
+const auth = firebase.auth();
 
-onAuthStateChanged(auth, user => {
-	if(user != null){
-		console.log('logged in');
-	}else{
-		console.log('No user');
-	}
-});
+
+var email="aaa@hotmail.com";
+var password="123456";
+firebase.auth().signInWithEmailAndPassword(email, password)
+  .then((userCredential) => {
+    // Signed in
+    var user = userCredential.user;
+	console.log(user);
+    // ...
+  })
+  .catch((error) => {
+    var errorCode = error.code;
+    var errorMessage = error.message;
+	console.log(errorCode);
+    console.log(errorMessage);
+  });
