@@ -1,5 +1,5 @@
 import {moduleSignIn} from "/test/JS/index.js"
 
-function signIn() {
+function gt() {
    moduleSignIn();
 }
