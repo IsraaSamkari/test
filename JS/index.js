@@ -1,5 +1,5 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js";
-import { getAuth } from "https://www.gstatic.com/firebasejs/9.0.0/firebase-auth.js";
+import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.0.0/firebase-auth.js";
 
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -20,17 +20,17 @@ const auth = getAuth(app);
 
 var email="aaa@hotmail.com";
 var password="123456";
-firebase.auth().signInWithEmailAndPassword(email, password)
+
+signInWithEmailAndPassword(auth, email, password)
   .then((userCredential) => {
-    // Signed in
-    var user = userCredential.user;
+    // Signed in 
+    const user = userCredential.user;
 	console.log(user);
     // ...
   })
   .catch((error) => {
-    var errorCode = error.code;
-    var errorMessage = error.message;
+    const errorCode = error.code;
+    const errorMessage = error.message;
 	console.log(errorCode);
     console.log(errorMessage);
   });
-
