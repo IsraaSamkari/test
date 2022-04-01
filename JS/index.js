@@ -17,10 +17,7 @@ const app = initializeApp({
 // Initialize Firebase Authentication and get a reference to the service
 const auth = getAuth(app);
 
-
-
-
-export function moduleSignIn(){
+function moduleSignIn(){
 	var email= document.getElementById("username").value;
 	var password= document.getElementById("password").value;
 	console.log(password);
@@ -31,7 +28,7 @@ export function moduleSignIn(){
 		// Signed in 
 		const user = userCredential.user;
 		console.log("has email");
-		// ...
+		location.replace("validate data.html")
 	  })
 	  .catch((error) => {
 		const errorCode = error.code;
@@ -41,3 +38,4 @@ export function moduleSignIn(){
 	});
 }
 
+window._allTheFns = {moduleSignIn}
