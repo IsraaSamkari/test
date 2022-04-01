@@ -18,19 +18,26 @@ const app = initializeApp({
 const auth = getAuth(app);
 
 
-var email="aaa@hotmail.com";
-var password="123456";
 
-signInWithEmailAndPassword(auth, email, password)
-  .then((userCredential) => {
-    // Signed in 
-    const user = userCredential.user;
-	console.log("has email");
-    // ...
-  })
-  .catch((error) => {
-    const errorCode = error.code;
-    const errorMessage = error.message;
-	console.log("error code");
-    console.log("errorMessage");
-  });
+
+function signIn() {
+	var email= document.getElementById("username").value;
+	var password= document.getElementById("password").value;
+	console.log(password);
+	
+  
+  signInWithEmailAndPassword(auth, email, password)
+	  .then((userCredential) => {
+		// Signed in 
+		const user = userCredential.user;
+		console.log("has email");
+		// ...
+	  })
+	  .catch((error) => {
+		const errorCode = error.code;
+		const errorMessage = error.message;
+		console.log("error code");
+		console.log("errorMessage");
+	});
+}
+
